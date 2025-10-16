@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор стоимости клининга - Лабораторная работа 6</title>
+    <link rel="stylesheet" href="style6.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Калькулятор стоимости клининга</h1>
+        
+        <form id="calculatorForm">
+            <div class="form-group">
+                <label for="quantity">Площадь помещения (м²):</label>
+                <input type="number" id="quantity" name="quantity" 
+                       min="1" max="1000" value="50" required>
+            </div>
+
+            <div class="form-group">
+                <label>Тип уборки:</label>
+                <div class="radio-group">
+                    <label class="radio-label">
+                        <input type="radio" name="serviceType" value="regular" checked>
+                        Регулярная уборка
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="serviceType" value="general">
+                        Генеральная уборка
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="serviceType" value="afterrepair">
+                        Уборка после ремонта
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group" id="optionsGroup" style="display: none;">
+                <label for="options">Дополнительные услуги:</label>
+                <select id="options" name="options">
+                    <option value="basic">Базовый набор</option>
+                    <option value="windows">С мытьём окон</option>
+                    <option value="furniture">С химчисткой мебели</option>
+                </select>
+            </div>
+
+            <div class="form-group" id="propertiesGroup" style="display: none;">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="properties" name="properties">
+                    Срочная уборка (+50%)
+                </label>
+            </div>
+
+            <div class="result" id="result">
+                <div class="price-display">
+                    <strong>Стоимость:</strong> <span id="totalPrice">0</span> руб
+                </div>
+                <div class="price-details" id="priceDetails"></div>
+            </div>
+        </form>
+    </div>
+
+    <script src="calculator6.js" defer></script>
+</body>
+</html>
